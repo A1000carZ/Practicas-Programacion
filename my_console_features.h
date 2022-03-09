@@ -8,6 +8,7 @@ void changeColour(int colour) {
 	HANDLE hConsole;
 	
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	
 	SetConsoleTextAttribute(hConsole, colour);
 }
 
@@ -92,4 +93,21 @@ void loadingAnimation(int delay,int duration) {
 		Sleep(delay);
 	}
 	system("cls");
+}
+
+std::string intToString(int num)
+{
+    std::string numAsStr;
+    bool isNegative = num < 0;
+    if(isNegative) num*=-1;
+
+    do
+    {
+       char toInsert = (num % 10) + 48;
+       numAsStr.insert(0, 1, toInsert);
+
+       num /= 10;
+    }while (num);
+  
+    return isNegative? numAsStr.insert(0, 1, '-') : numAsStr;
 }
