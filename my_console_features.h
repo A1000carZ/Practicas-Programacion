@@ -35,6 +35,16 @@ void animatedTitle(std::string title, int delay) {
 	std::cout << "\n\n\n";
 }
 // Parte de "my_console_features.h"
+// Su función: hacer una animación al texto
+void animatedSimpleText(std::string title, int delay) {
+	int x = 0;
+	while (title[x] != '\0') {
+		std::cout << title[x];
+		Sleep(delay);
+		x++;
+	}
+}
+// Parte de "my_console_features.h"
 // Su función: hacer una animación colorida al texto
 void animatedColoredTitle(std::string title, int delay) {
 	std::cout << "\n\n\n";
